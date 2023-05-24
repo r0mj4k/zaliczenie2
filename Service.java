@@ -40,9 +40,17 @@ public class Service {
         return null;
     }
     public void editAgeByName(String name, int age) throws IOException {
-      var student = this.findStudentByName(name);
-      System.out.println(student.ToString());
-      student.setAge(age);
-      System.out.println(student.ToString());
+      var students = this.getStudents();
+      String db = "";
+      for(Student stud : students){
+        if(stud.GetName().equals(name)){
+          stud.setAge(age);
+        }
+        db = db + stud.ToString() + "\n";
+      }
+      var f = new FileWriter("db.txt");
+      var b = new BufferedWriter(f);
+      b.append(db);
+      b.close();
   }
 }
