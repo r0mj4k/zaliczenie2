@@ -39,4 +39,11 @@ public class Service {
         }
         return null;
     }
+    public void editAgeByName(String name, int age) throws IOException {
+      var student = this.findStudentByName(name);
+      System.out.println(student.ToString());
+      student.setAge(age);
+      System.out.println(student.ToString());
+      
+  }
 }

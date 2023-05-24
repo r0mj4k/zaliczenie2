@@ -10,6 +10,10 @@ public class Student {
         Date = date;
     }
 
+    public void setAge(int age){
+      Age = age;
+    }
+
     public String GetName() {return Name;}
     public int GetAge() {return Age;}
     public String GetDate() {return Date;}
@@ -18,6 +22,7 @@ public class Student {
         return Name + " " + Integer.toString(Age) + " " + Date;
     }
 
+  
     public static Student Parse(String str) {
         String[] data = str.split(" ");
         if(data.length != 3)
